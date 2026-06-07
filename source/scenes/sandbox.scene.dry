@@ -17,6 +17,7 @@ go-to: sandbox_menu
 - @edit_hindy_angry: determines how angry hindenburg is at you
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
+- @changeChancellor: Edit Chancellor
 - @editleftright: Edit Left/Right value of the DDP/DVP/LVP
 - @coal_dis: Edit Coalition Dissent
 - @editstrife: Edit Strife (Maxing this lets you expand the reichsbanner without the center and liberal parties complaining)
@@ -443,6 +444,133 @@ on-arrival: month_actions += 1
 - @placeholder: place holder for when I add all the advisor actions here, for no cost whatsoever
 - @returnsandbox: return to sandbox
 
+@changeChancellor
+
+- @bruning: President [+ president +] appoints Bruning chancellor.
+- @bruning2: President [+ president +] appoints Bruning chancellor after the Z became the CVP.
+- @braun: President [+ president +] appoints Braun chancellor.
+- @muller: President [+ president +] appoints Muller chancellor.
+- @papen: President [+ president +] appoints Papen chancellor.
+- @marx: President [+ president +] appoints Marx chancellor.
+- @marx3: President [+ president +] appoints Marx chancellor after the Z became the CVP.
+- @marx2: President [+ president +] appoints Karl Marx chancellor.
+- @wels: President [+ president +] appoints Wels chancellor.
+- @wirth: President [+ president +] appoints Wirth chancellor.
+- @wirth2: President [+ president +] appoints Wirth chancellor after he defected to the SPD.
+- @wirth3: President [+ president +] appoints Wirth chancellor after the Z became the CVP.
+- @adenauer: President [+ president +] appoints Konrad Adenauer chancellor.
+- @adenauer2: President [+ president +] appoints Konrad Adenauer chancellor after the Z became the CVP.
+- @treviranus: President [+ president +] appoints Treviranus chancellor.
+- @treviranus: President [+ president +] appoints Treviranus chancellor after he formed his own party, the KVP.
+- @schleicher: President [+ president +] appoints Schleicher chancellor.
+- @schleicher2: President [+ president +] appoints Schleicher chancellor after he formed the DNEF.
+- @thalmann: President [+ president +] appoints Thalmann chancellor.
+- @breitscheid: President [+ president +] appoints Breitscheid chancellor.
+- @bredow: President [+ president +] appoints Bredow chancellor.
+- @goerdeler: President [+ president +] appoints Goerdeler, part of the DNEF, chancellor.
+- @goerdeler2: President [+ president +] appoints Goerdeler, the independent, chancellor.
+- @returnsandbox: return to sandbox
+
+@bruning
+go-to: sandbox_menu
+on-arrival: chancellor = 'Brüning'; chancellor_party = 'Z'
+
+@braun
+go-to: sandbox_menu
+on-arrival: chancellor = 'Braun'; chancellor_party = 'SPD'
+
+@muller
+go-to: sandbox_menu
+on-arrival: chancellor = 'Müller'; chancellor_party = 'SPD'
+
+@muller
+go-to: sandbox_menu
+on-arrival: chancellor = 'Müller'; chancellor_party = 'SPD'
+
+@papen
+go-to: sandbox_menu
+on-arrival: chancellor = 'Papen'; chancellor_party = 'I'
+
+@marx
+go-to: sandbox_menu
+on-arrival: chancellor = 'Marx'; chancellor_party = 'Z'
+
+@marx2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Marx'; chancellor_party = 'KPD'
+
+@wels
+go-to: sandbox_menu
+on-arrival: chancellor = 'Wels'; chancellor_party = 'SPD'
+
+@wirth
+go-to: sandbox_menu
+on-arrival: chancellor = 'Wirth'; chancellor_party = 'Z'
+
+@wirth2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Wirth'; chancellor_party = 'SPD'
+
+@wirth2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Wirth'; chancellor_party = 'SPD'
+
+@treviranus
+go-to: sandbox_menu
+on-arrival: chancellor = 'Treviranus'; chancellor_party = 'DNVP'
+
+@treviranus2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Treviranus'; chancellor_party = 'KVP'
+
+@schleicher
+go-to: sandbox_menu
+on-arrival: chancellor = 'Schleicher'; chancellor_party = 'I'
+
+@schleicher2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Schleicher'; chancellor_party = 'DNEF'
+
+@thalmann
+go-to: sandbox_menu
+on-arrival: chancellor = 'Thälmann'; chancellor_party = 'KPD'
+
+@adenauer
+go-to: sandbox_menu
+on-arrival: chancellor = 'Adenauer'; chancellor_party = 'Z'
+
+@breitscheid
+go-to: sandbox_menu
+on-arrival: chancellor = 'Breitscheid'; chancellor_party = 'SPD'
+
+@bredow
+go-to: sandbox_menu
+on-arrival: chancellor = 'Bredow'; chancellor_party = 'DNEF'
+
+@goerdeler
+go-to: sandbox_menu
+on-arrival: chancellor = 'Goerdeler'; chancellor_party = 'DNEF'
+
+@goerdeler2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Goerdeler'; chancellor_party = 'I'
+
+@wirth3
+go-to: sandbox_menu
+on-arrival: chancellor = 'Wirth'; chancellor_party = 'CVP'
+
+@adenauer2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Adenauer'; chancellor_party = 'CVP'
+
+@bruning2
+go-to: sandbox_menu
+on-arrival: chancellor = 'Brüning'; chancellor_party = 'CVP'
+
+@marx3
+go-to: sandbox_menu
+on-arrival: chancellor = 'Marx'; chancellor_party = 'CVP'
+
 @nowait
 go-to: sandbox_menu
 on-arrival: advisor_action_timer = 0
@@ -780,7 +908,7 @@ on-arrival: lvp_right += 1;
 
 @ddpleft
 go-to: editleftright
-on-arrival: ddp_left += 1;
+on-arrival: ddp_left += 400; ddp_cohesion -= 600
 
 @ddpright
 go-to: editleftright

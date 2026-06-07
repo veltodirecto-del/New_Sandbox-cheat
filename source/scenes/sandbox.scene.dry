@@ -17,7 +17,7 @@ go-to: sandbox_menu
 - @edit_hindy_angry: determines how angry hindenburg is at you
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
-- @changeChancellor: Edit Chancellor
+- @changeChancellor: Edit Chancellorsaf
 - @editleftright: Edit Left/Right value of the DDP/DVP/LVP
 - @coal_dis: Edit Coalition Dissent
 - @editstrife: Edit Strife (Maxing this lets you expand the reichsbanner without the center and liberal parties complaining)
@@ -461,7 +461,7 @@ on-arrival: month_actions += 1
 - @adenauer: President [+ president +] appoints Konrad Adenauer chancellor.
 - @adenauer2: President [+ president +] appoints Konrad Adenauer chancellor after the Z became the CVP.
 - @treviranus: President [+ president +] appoints Treviranus chancellor.
-- @treviranus: President [+ president +] appoints Treviranus chancellor after he formed his own party, the KVP.
+- @treviranus2: President [+ president +] appoints Treviranus chancellor after he formed his own party, the KVP.
 - @schleicher: President [+ president +] appoints Schleicher chancellor.
 - @schleicher2: President [+ president +] appoints Schleicher chancellor after he formed the DNEF.
 - @thalmann: President [+ president +] appoints Thalmann chancellor.

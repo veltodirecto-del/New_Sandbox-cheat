@@ -483,10 +483,6 @@ on-arrival: chancellor = 'Braun'; chancellor_party = 'SPD'
 go-to: sandbox_menu
 on-arrival: chancellor = 'Müller'; chancellor_party = 'SPD'
 
-@muller
-go-to: sandbox_menu
-on-arrival: chancellor = 'Müller'; chancellor_party = 'SPD'
-
 @papen
 go-to: sandbox_menu
 on-arrival: chancellor = 'Papen'; chancellor_party = 'I'
@@ -506,10 +502,6 @@ on-arrival: chancellor = 'Wels'; chancellor_party = 'SPD'
 @wirth
 go-to: sandbox_menu
 on-arrival: chancellor = 'Wirth'; chancellor_party = 'Z'
-
-@wirth2
-go-to: sandbox_menu
-on-arrival: chancellor = 'Wirth'; chancellor_party = 'SPD'
 
 @wirth2
 go-to: sandbox_menu

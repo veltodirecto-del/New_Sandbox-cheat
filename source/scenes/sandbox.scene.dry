@@ -17,7 +17,8 @@ go-to: sandbox_menu
 - @edit_hindy_angry: determines how angry hindenburg is at you
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
-- @changeChancellor: Edit Chancellorsaf
+- @changePresident: Edit President
+- @changeChancellor: Edit Chancellor
 - @editleftright: Edit Left/Right value of the DDP/DVP/LVP
 - @coal_dis: Edit Coalition Dissent
 - @editstrife: Edit Strife (Maxing this lets you expand the reichsbanner without the center and liberal parties complaining)
@@ -562,6 +563,135 @@ on-arrival: chancellor = 'Brüning'; chancellor_party = 'CVP'
 @marx3
 go-to: sandbox_menu
 on-arrival: chancellor = 'Marx'; chancellor_party = 'CVP'
+
+@changePresident
+
+- @jarres: [+ president +] dies and  Karl Jarres succeeds him.
+- @gessler: [+ president +] dies and  Otto Gessler succeeds him.
+- @luther: [+ president +] dies and  Hans Luther succeeds him.
+- @adenauerpresident: [+ president +] dies and  Konrad Adenauer succeeds him.
+- @bruningpresident: [+ president +] dies and  Heinrich Brüning succeeds him.
+- @stegerwaldpresident: [+ president +] dies and  Adam Stegerwald succeeds him.
+- @vorbeck: [+ president +] dies and  Paul von Lettow Vorbeck succeeds him.
+- @westarp: [+ president +] dies and  Kuno von Westarp succeeds him.
+- @duesterburg: [+ president +] dies and  Theodor Deusterberg succeeds him.
+- @eckener: [+ president +] dies and  Hugo Eckener succeeds him.
+- @rosenfeld: [+ president +] dies and Kurt Rosenfeld succeeds him.
+- @braunpresident: [+ president +] dies and Otto Braun succeeds him.
+- @thalmannpresident: [+ president +] dies and Ersnt Thälmann succeeds him.
+- @heuss: [+ president +] dies and Theodor Heuss succeeds him.
+- @hammerstein: [+ president +] dies and Kurt von Hammerstein succeeds him.
+- @schumacherpresident: [+ president +] dies and Kurt Schumacher succeeds him.
+- @welspresident: [+ president +] dies and Otto Wels succeeds him.
+- @munzenberg: [+ president +] dies and Willi Münzenberg succeeds him.
+- @einstein: [+ president +] dies and Albert Einstein succeeds him.
+- @mann: [+ president +] dies and Heinrich Mann succeeds him.
+- @ossietzky: [+ president +] dies and Carl von Ossietzky succeeds him.
+- @juchacz: [+ president +] dies and Marie Juchacz succeeds him.
+- @bumke: [+ president +] dies and Erwin Bumke succeeds him.
+- @grossmann: [+ president +] dies and Hanns Großmann succeeds him.
+- @hergt: [+ president +] dies and Oskar Hergt succeeds him.
+- @returnsandbox: return to sandbox
+
+@jarres
+go-to: sandbox_menu
+on-arrival: president = "Jarres"; president_ideology = "Right"
+
+@gessler
+go-to: sandbox_menu
+on-arrival: president = "Gessler"; president_ideology = "Moderate"
+
+@adenauerpresident
+go-to: sandbox_menu
+on-arrival: president = "Adenauer"; president_ideology = "Moderate"
+
+@luther
+go-to: sandbox_menu
+on-arrival: president = "Luther"; president_ideology = "Moderate"
+
+@bruningpresident
+go-to: sandbox_menu
+on-arrival: president = "Brüning"; president_ideology = "Moderate"
+
+@stegerwaldpresident
+go-to: sandbox_menu
+on-arrival: president = "Stegerwald"; president_ideology = "Moderate"
+
+@vorbeck
+go-to: sandbox_menu
+on-arrival: president = "Lettow-Vorbeck"; president_ideology = "Right"
+
+@westarp
+go-to: sandbox_menu
+on-arrival: president = "Westarp"; president_ideology = "Right"
+
+@duesterburg
+go-to: sandbox_menu
+on-arrival: president = "Duesterburg"; president_ideology = "Moderate"
+
+@eckener
+go-to: sandbox_menu
+on-arrival: president = "Eckener"; president_ideology = "Moderate"
+
+@rosenfeld
+go-to: sandbox_menu
+on-arrival: president = "Rosenfeld"; president_ideology = "Left"
+
+@braunpresident
+go-to: sandbox_menu
+on-arrival: president = "Braun"; president_ideology = "Left"
+
+@thalmannpresident
+go-to: sandbox_menu
+on-arrival: president = "Thälmann"; president_ideology = "Left"
+
+@heuss
+go-to: sandbox_menu
+on-arrival: president = "Heuss"; president_ideology = "Moderate"
+
+@hammerstein
+go-to: sandbox_menu
+on-arrival: president = "Hammerstein"; president_ideology = "Right"
+
+@schumacherpresident
+go-to: sandbox_menu
+on-arrival: president = "Schumacher"; president_ideology = "Left"
+
+@welspresident
+go-to: sandbox_menu
+on-arrival: president = "Wels"; president_ideology = "Left"
+
+@munzenberg
+go-to: sandbox_menu
+on-arrival: president = "Münzenberg"; president_ideology = "Left"
+
+@einstein
+go-to: sandbox_menu
+on-arrival: president = "Einstein"; president_ideology = "Moderate"
+
+@mann
+go-to: sandbox_menu
+on-arrival: president = "Mann"; president_ideology = "Left"
+
+@ossietzky
+go-to: sandbox_menu
+on-arrival: president = "Ossietzky"; president_ideology = "Left"
+
+@juchacz
+go-to: sandbox_menu
+on-arrival: president = "Juchacz"; president_ideology = "Left"
+
+@bumke
+go-to: sandbox_menu
+on-arrival: president = "Bumke"; president_ideology = "Right"
+
+@grossmann
+go-to: sandbox_menu
+on-arrival: president = "Großmann"; president_ideology = "Moderate"
+
+@hergt
+go-to: sandbox_menu
+on-arrival: president = "Hergt"; president_ideology = "Moderate"
 
 @nowait
 go-to: sandbox_menu

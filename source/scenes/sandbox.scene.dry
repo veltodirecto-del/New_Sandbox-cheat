@@ -19,6 +19,7 @@ go-to: sandbox_menu
 - @editbudget: Edit Budget
 - @changePresident: Edit President
 - @changeChancellor: Edit Chancellor
+- @changeMP: Edit Minister-President Of Prussia
 - @editleftright: Edit Left/Right value of the DDP/DVP/LVP
 - @coal_dis: Edit Coalition Dissent
 - @editstrife: Edit Strife (Maxing this lets you expand the reichsbanner without the center and liberal parties complaining)
@@ -288,41 +289,46 @@ go-to: decrsov
 
 @interrepar
 
-- @incrrepar: Increase progress to finish reparations (Not Working)
-- @decrrepar: Decrease progress to finish reparations (Not Working)
-- @finishrepar: Finish Reparations (Not Working)
+- @incrrepar: Increase progress to finish reparations (finally working)
+- @decrrepar: Decrease progress to finish reparations (finally working)
+- @pauserepar: Pause Reparations
+- @finishrepar: Finish Reparations (finally working)
 - @returnsandbox: Return to sandbox
 
 @incrrepar
-
-wip
+on-arrival: reparations_negotiation += 1
+go-to: interrepar
 
 @decrrepar
+on-arrival: reparations_negotiation -= 1
+go-to: interrepar
 
-wip
+@pauserepar
+on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; dvp_left += 3; pro_republic += 8; ddp_left += 1; ddp_cohesion += 1; lvp_left += 3; hindenburg_angry -= 20; economic_growth += 0.5 if economic_growth < 0; labor_dissent -= 15; dvp_relation += 5; ddp_relation += 5; z_relation += 5; lvp_relation += 5
+go-to: interrepar
 
 @finishrepar
-
-wip
+on-arrival: west_relation += 1; eu_progress += 1; reparations_resolved = 1; budget += 1; coalition_dissent -= 3 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 6*(1-dissent); new_middle_spd += 6*(1-dissent); rural_spd += 6*(1-dissent); catholics_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress -= 4 if coup_progress > 4; dvp_left += 8; ddp_left += 4; ddp_cohesion += 4; pro_republic += 15; lvp_left += 8; hindenburg_angry -= 100; economic_growth += 2.5; unemployed -= 3; labor_dissent -= 15; workers_nsdap -= 5; unemployed_nsdap -= 5; new_middle_nsdap -= 5; old_middle_nsdap -= 5; rural_nsdap -= 5; catholics_nsdap -= 5; dvp_relation += 10; ddp_relation += 10; z_relation += 10; lvp_relation += 10
+go-to: interrepar
 
 @intereu
 
-- @increu: Increase progress to forming the EU (Not Working)
-- @decreu: Decrease progress to forming the EU (Not Working)
-- @formeu: Form the EU (Not Working)
+- @increu: Increase progress to forming the EU (finally working)
+- @decreu: Decrease progress to forming the EU (finally working)
+- @formeu: Form the EU (finally working)
 - @returnsandbox: Return to the sandbox
 
 @increu
-
-wip
+on-arrival: eu_negotiation = 1; eu_progress += 1; west_relation += 1; foreign_goal_spd_peoples += 1
+go-to: intereu
 
 @decreu
-
-wip
+on-arrival: eu_negotiation = 0; eu_progress -= 1; west_relation -= 1; foreign_goal_spd_peoples -= 1
+go-to: intereu
 
 @formeu
-
-wip
+on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10; lvp_relation += 5; foreign_goal_spd_peoples += 1; economic_growth += 1 if economic_growth < 3; kpd_coalition_dissent += 1; kpd_relation -= 10
+go-to: intereu
 
 @interconcor
 
@@ -360,17 +366,17 @@ go-to: interconcor
 
 @interaust
 
-- @incraust: Increase SDAPO Support (Not working)
-- @decraust: Decrease SDAPO Support (Not working)
+- @incraust: Increase SDAPO Support (finally working)
+- @decraust: Decrease SDAPO Support (finally working)
 - @returnsandbox: Return to Sandbox
 
 @incraust
-
-wip
+on-arrival: sdapo_strength += 3
+go-to: interaust
 
 @decraust
-
-wip
+on-arrival: sdapo_strength -= 3
+go-to: interaust
 
 @nat_rep_support
 
@@ -576,7 +582,7 @@ on-arrival: chancellor = 'Marx'; chancellor_party = 'CVP'
 - @westarp: [+ president +] dies and  Kuno von Westarp succeeds him.
 - @duesterburg: [+ president +] dies and  Theodor Deusterberg succeeds him.
 - @eckener: [+ president +] dies and  Hugo Eckener succeeds him.
-- @rosenfeld: [+ president +] dies and Kurt Rosenfeld succeeds him.
+- @rosenfeldpres: [+ president +] dies and Kurt Rosenfeld succeeds him.
 - @braunpresident: [+ president +] dies and Otto Braun succeeds him.
 - @thalmannpresident: [+ president +] dies and Ersnt Thälmann succeeds him.
 - @heuss: [+ president +] dies and Theodor Heuss succeeds him.
@@ -633,7 +639,7 @@ on-arrival: president = "Duesterburg"; president_ideology = "Moderate"
 go-to: sandbox_menu
 on-arrival: president = "Eckener"; president_ideology = "Moderate"
 
-@rosenfeld
+@rosenfeldpres
 go-to: sandbox_menu
 on-arrival: president = "Rosenfeld"; president_ideology = "Left"
 
@@ -683,15 +689,64 @@ on-arrival: president = "Juchacz"; president_ideology = "Left"
 
 @bumke
 go-to: sandbox_menu
-on-arrival: president = "Bumke"; president_ideology = "Right"
+on-arrival: president = "Bumke (acting)"; president_ideology = "Right"
 
 @grossmann
 go-to: sandbox_menu
-on-arrival: president = "Großmann"; president_ideology = "Moderate"
+on-arrival: president = "Großmann (acting)"; president_ideology = "Moderate"
 
 @hergt
 go-to: sandbox_menu
 on-arrival: president = "Hergt"; president_ideology = "Moderate"
+
+@changeMP
+
+- @braunmp: Braun mysteriously becomes Prussian Minister-President.
+- @rosenfeldmp: Rosenfeld mysteriously becomes Prussian Minister-President.
+- @stegerwaldmp: Stegerwald mysteriously becomes Prussian Minister-President.
+- @bruningmp: Brüning mysteriously becomes Prussian Minister-President.
+- @goerdelermp: President [+ president +] appoints Goerdeler Prussian Minister-President.
+- @papenmp: President [+ president +] appoints Papen Prussian Minister-President.
+- @schleichermp: President [+ president +] appoints Schleicher Prussian Minister-President.
+- @goringmp: Göring is appointed Prussian Minister-President as the beginning of the end starts.
+- @luthermp: Luther mysteriously becomes Prussian Minister-President.
+- @returnsandbox: return to sandbox
+
+@braunmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Braun"
+
+@rosenfeldmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Rosenfeld"
+
+@stegerwaldmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Stegerwald"
+
+@bruningmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Brüning"
+
+@goerdelermp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Goerdeler"
+
+@papenmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Papen"
+
+@schleichermp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Schleicher"
+
+@goringmp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Göring"
+
+@luthermp
+go-to: sandbox_menu
+on-arrival: prussia_leader = "Luther"
 
 @nowait
 go-to: sandbox_menu
@@ -1016,6 +1071,8 @@ Removed 100 budget from the country's stockpile. This doesn't go to the homeless
 - @lvpright: Increase LVP Rightism
 - @ddpleft: Increase DDP Leftism
 - @ddpright: Increase DDP Rightism
+- @ddpcohesionleft: Decrease DDP Cohesion
+- @ddpcohesionright: Increase DDP Cohesion
 - @dvpleft: Increase DVP Leftism
 - @dvpright: Increase DVP Rightism
 - @returnsandbox: return to sandbox
@@ -1030,11 +1087,23 @@ on-arrival: lvp_right += 1;
 
 @ddpleft
 go-to: editleftright
-on-arrival: ddp_left += 400; ddp_cohesion -= 600
+on-arrival: ddp_left += 1
 
 @ddpright
 go-to: editleftright
 on-arrival: ddp_right += 1;
+
+@ddpcohesionleft
+go-to: editleftright
+on-arrival: ddp_cohesion -= 5
+
+Lowered DDP cohesion by 5.
+
+@ddpcohesionright
+go-to: editleftright
+on-arrival: ddp_cohesion += 5
+
+Increased DDP cohesion by 5.
 
 @dvpleft
 go-to: editleftright
